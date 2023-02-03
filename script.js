@@ -13,9 +13,9 @@ function mostrar(){
 
 function textoValido(){
     let texto = document.querySelector(".areatexto").value;
-    let validar = texto.match(/^[a-z]*$/);
+    let validar = texto.match(/^[a-z ]*$/);
 
-    if (validar == 0 ){
+    if (!validar || validar == 0 ){
         alert("Favor de ingresar letras en minúsculas y sin acentos.");
         ocultar();
         document.querySelector(".areatexto").value = "";
