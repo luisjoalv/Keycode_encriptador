@@ -16,7 +16,12 @@ function textoValido(){
     let validar = texto.match(/^[a-z ]*$/);
 
     if (!validar || validar == 0 ){
-        alert("Favor de ingresar letras en minúsculas y sin acentos.");
+        swal({
+            title: "Error",
+            text: "Favor de ingresar palabras en minúsculas y sin acentos.",
+            buttons: false,
+            timer: 3000,
+        });
         ocultar();
         document.querySelector(".areatexto").value = "";
         return true;
@@ -55,6 +60,11 @@ function copiar(){
     document.querySelector(".areaMensaje").select();
     navigator.clipboard.writeText(document.querySelector(".areaMensaje").value);
     document.querySelector(".areaMensaje").value = "";
-    alert("Texto Copiado")
+    swal({
+        title: "Buen trabajo!!",
+        text: "Su mensaje ha sido copiado.",
+        buttons: false,
+        timer: 2000,
+    });
     document.querySelector(".muestraMensaje").style.display = "none";
 }
